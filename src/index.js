@@ -1,15 +1,23 @@
 import React from 'react';
+import { observable } from 'mobx';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Counter from './Counter';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const appState = observable({
+  count: 0
+});
+appState.increment = function () {
+  this.count++;
+}
+appState.decrement = function () {
+  this.count--;
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<Counter store={appState} />, rootElement);
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
