@@ -1,8 +1,9 @@
-import { observable, computed } from "mobx";
 import { observer } from "mobx-react";
-import { Component } from "react";
 
-const t = new class Temperature {
-/*   @observable unit = "c";
-  @observable temperatureCelsius = 25; */
-}
+const Temp = observer(({ temperature}) => {
+  <div>
+    {temperature.temperature}
+  </div>
+})
+
+export default Temp;
