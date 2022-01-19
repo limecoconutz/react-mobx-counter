@@ -1,0 +1,10 @@
+{
+  "presets": ["react-app", "babel-preset-expo"],
+  "plugins": [
+  "syntax-dynamic-import",
+    [
+  "@babel/plugin-proposal-decorators", { "legacy": true }],
+  "@babel/plugin-proposal-object-rest-spread",
+  "react-hot-loader/babel"
+    ]
+}
